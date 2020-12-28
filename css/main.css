@@ -1,0 +1,609 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Font Src */
+@font-face {
+  font-family: "Raleway-regular";
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-medium";
+  src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-bold";
+  src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-semibold";
+  src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-black";
+  src: url(../fonts/Raleway-Black.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-extrabold";
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+/* COLORS ROOT */
+:root {
+  --primary: #eebf00;
+  --secondary:#232b38;
+  --ternary:#6c6c6c;
+  --danger:#fe4545;
+  --pure:#fefefe;
+  --light:#f0f0f0;
+  --heaven:#ffffff;
+  --footer:#2d333f;
+}
+
+body {
+  -webkit-font-smoothing: antialised;
+}
+
+.top_bar {
+  font-family: "Raleway-semibold";
+}
+
+.top_nav .time {
+  margin-left: 74px !important;
+}
+
+.top_nav .contact h5, .top_nav .time h5 {
+  font-family: "Raleway-black";
+  font-weight: bolder;
+  font-size: .9rem;
+}
+
+.top_nav .contact h6, .top_nav .time h6 {
+  font-family: "Raleway-medium";
+  letter-spacing: 0.055rem;
+  font-size: 0.75rem;
+  color: var(--ternary);
+}
+
+.nav_bar {
+  margin-left: 5.5rem;
+}
+
+.nav_bar a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: "Raleway-semibold";
+  font-size: 0.95rem;
+  padding: 1rem 1.5rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.nav_bar a:hover {
+  background: var(--primary);
+  color: var(--pure);
+}
+
+.nav_bar a.active {
+  background: var(--primary);
+  color: var(--pure);
+}
+
+.nav_shadow {
+  position: relative;
+  background: var(--heaven);
+}
+
+.nav_shadow::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 92%;
+  height: 6rem;
+  background-image: url(../icons/shadow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: -2.1rem;
+  z-index: -1;
+}
+
+.hero {
+  height: 34rem;
+  background-image: url(../images/hero.png);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+}
+
+.hero h1 {
+  font-family: "Raleway-extrabold";
+  color: varr(--secondary);
+  font-family: 2.5rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  font-family: "Raleway-medium";
+  width: 70%;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn-warning {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.hero .btn-warning:hover {
+  color: #eebf00 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.hero .btn-dark {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.hero .btn-dark:hover {
+  color: #353431 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.hero .hero_img img {
+  width: 80%;
+  margin-left: -15px;
+  margin-top: -30px;
+}
+
+.top-products, .about-meal {
+  padding: 4rem 0;
+}
+
+.top-products .heading_section, .about-meal .heading_section {
+  font-family: "Raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.top-products .heading_section::after, .about-meal .heading_section::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -3.1rem;
+}
+
+.top-products h2, .about-meal h2 {
+  font-family: "Raleway-semibold";
+  color: varr(--secondary);
+  font-family: 2.5rem;
+  font-size: 1.6rem;
+}
+
+.top-products p, .about-meal p {
+  font-family: "Raleway-medium";
+  width: 80%;
+  line-height: 1.5;
+  font-size: .9rem;
+  margin-bottom: 3.5rem !important;
+}
+
+.top-products .btn-dark, .about-meal .btn-dark {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.top-products .btn-dark:hover, .about-meal .btn-dark:hover {
+  color: #353431 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.top-products {
+  padding: 4rem 0;
+  background: var(--light);
+}
+
+.top-products .slider {
+  position: relative;
+}
+
+.top-products .slider .slider-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: var(--primary);
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.top-products .slider .slider-btn.prev-btn {
+  position: absolute;
+  top: 46%;
+  left: -3rem;
+  z-index: 1;
+}
+
+.top-products .slider .slider-btn.next-btn {
+  position: absolute;
+  top: 46%;
+  right: -3rem;
+  z-index: 1;
+}
+
+.top-products .slider .food-slider .card {
+  border-radius: .4rem;
+  -webkit-box-shadow: -2px 4px 15px #ad9b9b94;
+          box-shadow: -2px 4px 15px #ad9b9b94;
+  outline: none;
+}
+
+.top-products .slider .food-slider .card hr {
+  background: #08ee0000;
+  margin-bottom: -.2rem;
+}
+
+.top-products .slider .food-slider .card .card-img-top {
+  width: 45%;
+  padding-top: 2rem;
+}
+
+.top-products .slider .food-slider .card .card-body .card-title {
+  font-family: "Raleway-semibold";
+  font-size: 1.2rem;
+}
+
+.top-products .slider .food-slider .card .card-body .price {
+  font-family: "Raleway-semibold";
+}
+
+.top-products .slider .food-slider .card .card-body button {
+  background: transparent;
+  border: 1px solid #eebf00;
+  border-radius: .2rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.top-products .slider .food-slider .card .card-body button:hover {
+  background: #eebf00;
+}
+
+.top-products .slider .food-slider .card .card-body button img {
+  padding: .8rem;
+}
+
+.top-products .slider .food-slider .card .card-body button span {
+  padding: .3rem 1.4rem;
+  color: var(--ternary);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.top-products .slider .food-slider .card .card-body button span:hover {
+  color: white;
+}
+
+.top-products .view_btn .btn-dark {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.top-products .view_btn .btn-dark:hover {
+  color: #353431 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.slick-slide {
+  margin: 0 27px;
+}
+
+.slick-list {
+  margin: 0 -27px;
+}
+
+/* Services Section*/
+.service_Sec {
+  padding: 4rem 0;
+  background: var(--light);
+}
+
+.service_Sec .heading_section {
+  font-family: "Raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.service_Sec .heading_section::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -3.1rem;
+}
+
+.service_Sec .card {
+  margin: 0rem .8rem;
+  -webkit-box-shadow: -2px 4px 15px #ad9b9b94;
+          box-shadow: -2px 4px 15px #ad9b9b94;
+  outline: none;
+}
+
+.service_Sec .card .card-body img {
+  margin-top: -4.1rem;
+}
+
+.service_Sec .card .card-body h2 {
+  font-family: "Raleway-bold";
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+}
+
+.service_Sec .card .card-body p {
+  margin: 1rem 0rem;
+}
+
+.service_Sec .btn-warning {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.service_Sec .btn-warning:hover {
+  color: #eebf00 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.service_Sec .btn-dark {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.service_Sec .btn-dark:hover {
+  color: #353431 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.big-dela {
+  padding: 4rem 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(35, 43, 56, 0.9)), to(rgba(35, 43, 56, 0.9))), url(../images/food-table.jpg);
+  background: linear-gradient(rgba(35, 43, 56, 0.9), rgba(35, 43, 56, 0.9)), url(../images/food-table.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.big-dela .heading_section {
+  font-family: "Raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.big-dela .heading_section::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -3.1rem;
+}
+
+.big-dela .card .num {
+  font-family: "Raleway-semibold";
+  font-size: 2.5rem;
+}
+
+.big-dela .card span {
+  font-family: "Raleway-medium";
+}
+
+.latest-news {
+  padding: 4rem 0;
+  background: var(--light);
+}
+
+.latest-news .heading_section {
+  font-family: "Raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.latest-news .heading_section::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -3.1rem;
+}
+
+.latest-news h1 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-family: "Raleway-semibold";
+}
+
+.latest-news .card {
+  -webkit-box-shadow: -2px 4px 15px #ad9b9b94;
+          box-shadow: -2px 4px 15px #ad9b9b94;
+}
+
+.latest-news .btn-dark {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+}
+
+.latest-news .btn-dark:hover {
+  color: #353431 !important;
+  background: transparent;
+  border: 1px solid #6c6c6c;
+}
+
+.subscribe {
+  padding: 4rem 0;
+  background: var(--primary);
+}
+
+.subscribe h1 {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  font-family: "Raleway-bold";
+}
+
+.subscribe p {
+  font-family: "Raleway-medium";
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.subscribe .input-wrap {
+  background: var(--heaven);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.subscribe .input-wrap input {
+  width: 100%;
+  border: none;
+  padding: 0rem 1rem;
+  font-size: 1rem;
+}
+
+.subscribe .input-wrap input:focus {
+  outline: none;
+}
+
+.subscribe .input-wrap button {
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.subscribe .input-wrap button:hover {
+  background: #232b38 !important;
+}
+
+.contact-info {
+  padding: 4rem 0;
+}
+
+.contact-info .heading_section {
+  font-family: "Raleway-bold";
+  text-align: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.contact-info .heading_section::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3rem;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -3.1rem;
+}
+
+.contact-info .map {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+footer {
+  background: var(--footer);
+  padding: 5rem 0rem;
+  color: var(--light);
+}
+
+footer h3 {
+  padding: 1.2rem 0rem;
+  border-bottom: 2px solid var(--danger);
+  font-family: "Raleway-semibold";
+}
+
+footer p {
+  font-family: "Raleway-regular";
+  line-height: 1.5;
+  color: var(--pure);
+}
+
+footer .q-links a {
+  text-decoration: none;
+  color: var(--pure);
+  padding: .3rem 0rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+footer .q-links a:hover {
+  color: var(--primary);
+}
+
+footer .follo_link {
+  margin-left: 39%;
+}
+
+footer .follo_link a {
+  text-decoration: none;
+  color: var(--pure);
+  padding: .3rem 0rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+footer .follo_link a:hover {
+  color: var(--primary);
+}
+
+footer .follo_link img {
+  margin-right: 1rem;
+}
+/*# sourceMappingURL=main.css.map */

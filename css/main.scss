@@ -1,0 +1,574 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Font Src */
+@font-face{
+  font-family: "Raleway-regular"; 
+  src: url(../fonts/Raleway-Regular.ttf); 
+}
+@font-face{
+  font-family: "Raleway-medium"; 
+  src: url(../fonts/Raleway-Medium.ttf); 
+}
+@font-face{
+  font-family: "Raleway-bold"; 
+  src: url(../fonts/Raleway-Bold.ttf); 
+}
+@font-face{
+  font-family: "Raleway-semibold"; 
+  src: url(../fonts/Raleway-SemiBold.ttf); 
+}
+@font-face{
+  font-family: "Raleway-black"; 
+  src: url(../fonts/Raleway-Black.ttf); 
+}
+@font-face{
+  font-family: "Raleway-extrabold"; 
+  src: url(../fonts/Raleway-ExtraBold.ttf); 
+}
+
+/* COLORS ROOT */
+:root {
+  --primary: #eebf00;
+  --secondary:#232b38;
+  --ternary:#6c6c6c;
+  --danger:#fe4545;
+  --pure:#fefefe;
+  --light:#f0f0f0;
+  --heaven:#ffffff;
+  --footer:#2d333f;
+}
+body{
+  -webkit-font-smoothing:antialised;
+  
+}
+.top_bar{
+  font-family: "Raleway-semibold"; 
+}
+.top_nav{
+
+  & .time {
+    margin-left: 74px !important;
+  }
+
+  & .contact, .time{
+     & h5{
+    font-family: "Raleway-black";
+    font-weight: bolder;
+    font-size: .9rem;
+    }
+    & h6 {
+      font-family: "Raleway-medium"; 
+      letter-spacing: 0.055rem;
+      font-size: 0.75rem;
+      color: var(--ternary);
+    }
+  }
+ 
+}
+.nav_bar {
+  margin-left: 5.5rem;
+   & a {
+     text-decoration: none;
+     color: var(--secondary);
+     font-family: "Raleway-semibold"; 
+     font-size: 0.95rem;
+     padding: 1rem 1.5rem;
+     transition: all .3s ease;
+
+      &:hover{
+       background: var(--primary);
+       color: var(--pure);
+      }
+
+     &.active{
+       background: var(--primary);
+       color: var(--pure);
+     }
+
+   }
+}
+.nav_shadow{
+  position: relative;
+  background: var(--heaven);
+
+  &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 92%;
+    height: 6rem;
+    background-image: url(../icons/shadow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: -2.1rem;
+    z-index: -1;
+  }
+}
+
+.hero{
+  height: 34rem;
+  background-image: url(../images/hero.png);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  // overflow: hidden;
+
+  & h1{
+    font-family: "Raleway-extrabold"; 
+    color: varr(--secondary);
+    font-family: 2.5rem;
+    font-size: 2rem;
+  }
+  & p{
+    font-family: "Raleway-medium"; 
+    width: 70%;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  & .btn-warning {
+        transition: all .3s ease;
+        font-weight: 500;
+     &:hover{
+          color: #eebf00 !important;
+          background: transparent;
+          border: 1px solid #6c6c6c;
+     }
+  }
+  & .btn-dark {
+        transition: all .3s ease;
+        font-weight: 500;
+     &:hover{
+          color: #353431 !important;
+          background: transparent;
+          border: 1px solid #6c6c6c;
+        }
+     } 
+  & .hero_img{
+    & img{
+      width: 80%;
+      margin-left: -15px;
+      margin-top: -30px;
+    }
+    
+  }
+}
+// Product Slider Css
+.top-products, .about-meal{
+  padding: 4rem 0;
+
+  & .heading_section {
+  font-family: "Raleway-bold"; 
+  text-align: center; 
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -3.1rem;
+
+  }
+}
+& h2{
+  font-family: "Raleway-semibold"; 
+  color: varr(--secondary);
+  font-family: 2.5rem;
+  font-size: 1.6rem;
+}
+& p{
+  font-family: "Raleway-medium"; 
+  width: 80%;
+  line-height: 1.5;
+  font-size: .9rem;
+  margin-bottom: 3.5rem !important;
+}
+& .btn-dark {
+      transition: all .3s ease;
+      font-weight: 500;
+   &:hover{
+        color: #353431 !important;
+        background: transparent;
+        border: 1px solid #6c6c6c;
+      }
+   }
+}
+
+
+.top-products{
+  padding: 4rem 0;
+  background: var(--light);
+
+  & .slider{
+
+    position: relative;
+
+    & .slider-btn{
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: var(--primary);
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+
+      &.prev-btn{
+        position: absolute;
+        top:46%;
+        left: -3rem;
+
+        z-index: 1;
+      }
+      &.next-btn{
+        position: absolute;
+        top:46%;
+        right: -3rem;
+        z-index: 1;
+      }
+    }
+
+    & .food-slider{
+        
+       & .card{
+          border-radius: .4rem;
+          box-shadow: -2px 4px 15px #ad9b9b94;
+          outline: none;
+        & hr{
+          background: #08ee0000;
+          margin-bottom: -.2rem;
+        }
+          & .card-img-top{
+            width: 45%;
+            padding-top: 2rem;
+          }
+
+          & .card-body{
+            & .card-title{
+              font-family: "Raleway-semibold"; 
+              font-size: 1.2rem;
+            }
+            & .price{
+              font-family: "Raleway-semibold"; 
+            }
+            & button {
+              background: transparent;
+              border: 1px solid #eebf00;
+              border-radius: .2rem;
+              transition: all .3s ease;
+              &:hover{
+                background: #eebf00;
+              }
+              & img{
+                padding: .8rem;
+              }
+              & span{
+                padding: .3rem 1.4rem;
+                color: var(--ternary);
+                transition: all .4s ease;
+                &:hover{  
+                  color: rgb(255, 255, 255);
+                }
+              }
+            }
+          }
+       }
+    }
+  }
+
+  & .view_btn{
+
+    & .btn-dark {
+      transition: all .3s ease;
+      font-weight: 500;
+   &:hover{
+        color: #353431 !important;
+        background: transparent;
+        border: 1px solid #6c6c6c;
+      }
+   }
+  }
+ 
+}
+.slick-slide{
+  margin: 0 27px;
+}
+.slick-list{
+  margin: 0 -27px;
+}
+
+/* Services Section*/
+
+.service_Sec{
+  padding: 4rem 0;
+  background: var(--light);
+
+  & .heading_section {
+  font-family: "Raleway-bold"; 
+  text-align: center; 
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -3.1rem;
+
+  }
+}
+& .card{
+  margin: 0rem .8rem;
+  box-shadow: -2px 4px 15px #ad9b9b94;
+  outline: none;
+
+  & .card-body{
+ 
+  & img {
+    margin-top: -4.1rem;
+  }
+  & h2{
+    font-family: "Raleway-bold"; 
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+  }
+  & p{
+    margin: 1rem 0rem;
+  }
+ }
+ }
+ & .btn-warning {
+  transition: all .3s ease;
+  font-weight: 500;
+&:hover{
+    color: #eebf00 !important;
+    background: transparent;
+    border: 1px solid #6c6c6c;
+}
+}
+& .btn-dark {
+  transition: all .3s ease;
+  font-weight: 500;
+&:hover{
+    color: #353431 !important;
+    background: transparent;
+    border: 1px solid #6c6c6c;
+  }
+}
+
+}
+
+// Big Deals CountDown
+.big-dela{
+  padding: 4rem 0;
+  background: linear-gradient(rgba(35,43,56,0.9),rgba(35,43,56,0.9)), url(../images/food-table.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  & .heading_section {
+  font-family: "Raleway-bold"; 
+  text-align: center; 
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -3.1rem;
+
+  }
+ }
+ & .card{
+    & .num{
+      font-family:"Raleway-semibold";
+      font-size: 2.5rem; 
+    }
+    & span{
+      font-family: "Raleway-medium"; 
+    }
+  }
+}
+// News section CSS
+.latest-news{
+  padding: 4rem 0;
+  background: var(--light);
+
+  & .heading_section {
+  font-family: "Raleway-bold"; 
+  text-align: center; 
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -3.1rem;
+
+  }
+ }
+ & h1{
+   font-size: 2rem;
+   text-transform: capitalize;
+   font-family: "Raleway-semibold"; 
+ }
+ & .card{
+  box-shadow: -2px 4px 15px #ad9b9b94;
+ }
+ & .btn-dark {
+  transition: all .3s ease;
+  font-weight: 500;
+&:hover{
+    color: #353431 !important;
+    background: transparent;
+    border: 1px solid #6c6c6c;
+  }
+}
+}
+
+// Subscribe Css
+.subscribe{
+  padding: 4rem 0;
+  background: var(--primary); 
+
+  & h1{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    font-family: "Raleway-bold"; 
+  }
+  & p{
+    font-family: "Raleway-medium"; 
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  & .input-wrap{
+    background: var(--heaven);
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 4px;
+
+    & input{
+      width: 100%;
+      border: none;
+      padding: 0rem 1rem;
+      font-size: 1rem;
+      &:focus{
+        outline: none;
+      }
+    }
+    & button{
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      outline: none;
+      transition: all .3s ease;
+
+      &:hover{
+        background: #232b38 !important;
+      }
+    }
+  }
+}
+
+// Contact Section css
+
+.contact-info{
+  padding: 4rem 0;
+
+  & .heading_section {
+  font-family: "Raleway-bold"; 
+  text-align: center; 
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3rem;
+    background-image: url(../icons/hr.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: -3.1rem;
+
+  }
+}
+ .map{
+   filter: grayscale(100%);
+ }
+}
+
+// Footer Css
+
+footer{
+  background: var(--footer);
+  padding: 5rem 0rem;
+  color: var(--light);
+  & h3{
+    padding: 1.2rem 0rem;
+    border-bottom: 2px solid var(--danger);
+    font-family: "Raleway-semibold"; ;
+  }
+  & p{
+    font-family: "Raleway-regular";
+    line-height: 1.5;
+    color: var(--pure);
+  }
+  & .q-links{
+   & a{
+     text-decoration: none;
+     color: var(--pure);
+     padding: .3rem 0rem;
+     transition: all .3s ease;
+
+     &:hover{
+       color: var(--primary);
+     }
+   }
+  }
+  .follo_link{
+    margin-left: 39%;
+
+    & a{
+      text-decoration: none;
+      color: var(--pure);
+      padding: .3rem 0rem;
+      transition: all .3s ease;
+ 
+      &:hover{
+        color: var(--primary);
+      }
+    }
+    & img{
+        margin-right: 1rem;
+    }
+  }
+}
